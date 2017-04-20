@@ -1,4 +1,43 @@
 body {
-  background-color: lightslategrey; }
+  margin: 0;
+  padding: 0; }
+
+p {
+  margin: 0;
+  padding: 0; }
+
+.app-header {
+  height: 3.5em;
+  background-color: black;
+  width: 100%;
+  padding: 0;
+  margin: 0; }
+  .app-header .app-wrapper-nav {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+    color: white;
+    height: 100%; }
+    .app-header .app-wrapper-nav .app-nav {
+      color: white; }
+
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 750px;
+  height: 100%; }
+  .app-wrapper .app-nav-bar {
+    width: 7em;
+    background-color: darkgrey; }
+  .app-wrapper .main-content {
+    flex: 1;
+    background-color: lightgrey; }
+
+.app-footer {
+  height: 35px;
+  background-color: black;
+  width: 100%; }
 
 /*# sourceMappingURL=app.css.map */
