@@ -20,12 +20,17 @@ class App extends Component {
         </div>
         </div>
         <div className="app-wrapper">
-        <div className="app-nav-bar"></div>
-          <div className="main-content"></div>
-            <div className="text-area">
-            </div>
+        <div className="app-nav-bar">
+          <div className="nav-item">
+          <p>Post by Dates</p>
           </div>
-        <div className="app-footer"></div>
+          <div className="nav-item">
+          <p>Tags</p>
+          </div>
+          </div>
+          <div className="main-content"></div>
+          </div>
+        <div className="app-footer"> <p> The Dinosaur Engineering Expierence 2017</p> </div>
       </div>
     )
   }

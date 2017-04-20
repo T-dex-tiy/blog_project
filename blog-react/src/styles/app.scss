@@ -1,14 +1,11 @@
 *{
-  font: helvetica sans-serif;
+  font-family: helvetica sans-serif;
 }
 body {
   margin: 0;
   padding: 0;
 }
-p{
-  margin:0;
-  padding:0;
-}
+
 .app-header{
   height:3.5em;
   background-color: black;
@@ -23,8 +20,22 @@ p{
     color:white;
     height:100%;
 
+
+
     .app-nav{
     color:white;
+    }
+    p{
+      margin:0;
+      padding:0;
+      cursor: pointer;
+      &:hover {
+        color: darkslategrey;
+      }
+    }
+
+    &:hover {
+      color: darkslategrey;
     }
 
   }
@@ -41,17 +52,34 @@ p{
   height:100%;
 
   .app-nav-bar{
-    width:7em;
+    width:10em;
     background-color: darkgrey;
+
+    .nav-item{
+      background-color: lightgrey;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size:10px;
+      border: solid 1px black;
+      &:hover {
+        background-color: darkslategrey;
+      }
+    }
   }
   .main-content{
     flex:1;
-    background-color:lightgrey;
+    background-color:blue;
   }
 }
 
 .app-footer{
+  display: flex;
   height:35px;
   background-color: black;
   width: 100%;
+  justify-content: center;
+  color:white;
 }
