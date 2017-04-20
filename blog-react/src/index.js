@@ -10,11 +10,11 @@ class App extends Component {
         <div className="app-header">
         <div className="app-wrapper-nav">
           <div className="app-nav">
-            <div className ="blog page">
+            <div className="blog page">
             <p>Blogs</p></div>
-            <div className ="about page">
+            <div className="about page">
             <p>About</p></div>
-            <div className ="rec link page">
+            <div className="rec link page">
             <p>Recommended Sites</p></div>
           </div>
         </div>
@@ -22,8 +22,9 @@ class App extends Component {
         <div className="app-wrapper">
         <div className="app-nav-bar"></div>
           <div className="main-content"></div>
-
-        </div>
+            <div className="text-area">
+            </div>
+          </div>
         <div className="app-footer"></div>
       </div>
     )
