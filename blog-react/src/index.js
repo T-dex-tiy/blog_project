@@ -10,21 +10,21 @@ class App extends Component {
         <div className="app-header">
         <div className="app-wrapper-nav">
           <div className="app-nav">
-            <div className="blog page">
+            <div className="nav-item blogs">
             <p>Blogs</p></div>
-            <div className="about page">
+            <div className="nav-item about">
             <p>About</p></div>
-            <div className="rec link page">
+            <div className="nav-item sites">
             <p>Recommended Sites</p></div>
           </div>
         </div>
         </div>
         <div className="app-wrapper">
         <div className="app-nav-bar">
-          <div className="nav-item">
+          <div className="nav-item dates">
           <p>Post by Dates</p>
           </div>
-          <div className="nav-item">
+          <div className="nav-item tags">
           <p>Tags</p>
           </div>
           </div>
