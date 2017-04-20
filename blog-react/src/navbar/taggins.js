@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
-class sites extends Component{
+class Tag1 extends Component{
 
   render(){
     return(
-      <p>TEST</p>
+      <p>#Just a test</p>
     )
   }
 }
 
-module.exports = sites
+
+module.exports = Tag1

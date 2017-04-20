@@ -6,3 +6,5 @@ class dates extends Component{
     return
   }
 }
+
+module.exports = dates

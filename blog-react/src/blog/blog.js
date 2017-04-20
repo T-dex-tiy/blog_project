@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-class blogs extends Component{
+class blog extends Component{
 
   render(){
     return
   }
 }
+
+module.exports = blog

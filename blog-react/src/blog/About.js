@@ -3,6 +3,9 @@ import React, { Component } from 'react'
 class about extends Component{
 
   render(){
-    return
+    return 
   }
 }
+
+
+module.exports = about
