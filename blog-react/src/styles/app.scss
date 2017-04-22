@@ -24,14 +24,20 @@ body {
 
     .app-nav{
     color:white;
+
+    &.currentPage{
+      color:darkslategrey;
+    }
     }
     p{
       margin:0;
       padding:0;
       cursor: pointer;
+
       &:hover {
         color: darkslategrey;
       }
+
     }
 
   }
@@ -61,11 +67,11 @@ body {
       font-size:10px;
       border: solid 1px black;
     &:hover {
-        background-color: blue;
+        background-color: darkslategrey;
       }
     &.currentScreen{
-      color:white;
-      background-color: black;
+      color:darkslategrey;
+      background-color: white;
     }
     }
   }

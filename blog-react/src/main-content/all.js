@@ -4,7 +4,7 @@ class All extends Component{
 
   render(){
     return (
-      <div className="blog main">
+      <div>
       <p>Blogs</p>
       </div>
     )

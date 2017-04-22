@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import About from './blog/About.js';
-import Blog from './blog/blog.js';
 import Sites from './blog/Sites.js';
 import Dates from './navbar/dates.js';
 import Tag1 from './navbar/taggins.js';
@@ -50,7 +49,7 @@ class App extends Component {
           <div className="app-nav">
             <div className="nav-item new" onClick={() => {this.udpdatedDisplay(1)}}>
             <NewHome /></div>
-            <div className="nav-item blog" onClick={() =>{this.udpdatedDisplay(4)}}><All /></div>
+            <div className={this.state.screenDisplay===4 ? "nav-item all currentScreen":"nav-item all"}  onClick={() =>{this.udpdatedDisplay(4)}}><All /></div>
             <div className="nav-item about">
             <About /></div>
             <div className="nav-item sites">

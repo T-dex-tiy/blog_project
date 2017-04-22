@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class blog extends Component{
+class Blog extends Component{
 
   render(){
     return(
@@ -9,4 +9,4 @@ class blog extends Component{
   }
 }
 
-module.exports = blog
+module.exports = Blog

@@ -19,6 +19,8 @@ body {
     height: 100%; }
     .app-header .app-wrapper-nav .app-nav {
       color: white; }
+      .app-header .app-wrapper-nav .app-nav.currentPage {
+        color: darkslategrey; }
     .app-header .app-wrapper-nav p {
       margin: 0;
       padding: 0;
@@ -46,10 +48,10 @@ body {
       font-size: 10px;
       border: solid 1px black; }
       .app-wrapper .app-nav-bar .nav-item:hover {
-        background-color: blue; }
+        background-color: darkslategrey; }
       .app-wrapper .app-nav-bar .nav-item.currentScreen {
-        color: white;
-        background-color: black; }
+        color: darkslategrey;
+        background-color: white; }
   .app-wrapper .mainContent {
     flex: 1;
     background-color: red; }
