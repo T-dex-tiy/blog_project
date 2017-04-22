@@ -13,14 +13,34 @@ import ByDate from './main-content/datedpost.js';
 import './styles/app.css';
 
 class App extends Component {
-
+    constructor(props){
+      super(props)
+      this.state = {
+        screenIndex: 3
+      }
+    }
   render() {
+    var DisplayedScreen
+
+    if(this.state.screenIndex === 1){
+      DisplayedScreen = <Post />
+    }
+
+    if(this.state.screenIndex === 2){
+      DisplayedScreen = <ByDate />
+    }
+
+    if(this.state.screenIndex === 3){
+      DisplayedScreen = <ByTag />
+    }
+
+
     return (
       <div className="app">
         <div className="app-header">
         <div className="app-wrapper-nav">
           <div className="app-nav">
-            <div className="nav-item new">
+            <div className="nav-item new" onClick={() => {this.setState({screenIndex:1})}}>
             <NewHome /></div>
             <div className="nav-item blog">
             <Blog /></div>
@@ -42,7 +62,7 @@ class App extends Component {
           </div>
           <div className="mainContent">
             <div className="Post">
-              <Post />
+              {DisplayedScreen}
 
             </div>
           </div>
