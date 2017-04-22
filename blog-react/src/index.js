@@ -17,25 +17,29 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenIndex: 3
+        screenDisplay: 3
       }
+    }
+
+    udpdatedDisplay(newDisplay){
+      this.setState({screenDisplay:newDisplay})
     }
   render() {
     var DisplayedScreen
 
-    if(this.state.screenIndex === 1){
+    if(this.state.screenDisplay === 1){
       DisplayedScreen = <Post />
     }
 
-    if(this.state.screenIndex === 2){
+    if(this.state.screenDisplay === 2){
       DisplayedScreen = <ByDate />
     }
 
-    if(this.state.screenIndex === 3){
+    if(this.state.screenDisplay === 3){
       DisplayedScreen = <ByTag />
     }
 
-    if(this.state.screenIndex === 4){
+    if(this.state.screenDisplay === 4){
       DisplayedScreen = <All />
     }
 
@@ -44,9 +48,9 @@ class App extends Component {
         <div className="app-header">
         <div className="app-wrapper-nav">
           <div className="app-nav">
-            <div className="nav-item new" onClick={() => {this.setState({screenIndex:1})}}>
+            <div className="nav-item new" onClick={() => {this.udpdatedDisplay(1)}}>
             <NewHome /></div>
-            <div className="nav-item blog" onClick={() =>{this.setState({screenIndex:4})}}><All /></div>
+            <div className="nav-item blog" onClick={() =>{this.udpdatedDisplay(4)}}><All /></div>
             <div className="nav-item about">
             <About /></div>
             <div className="nav-item sites">
@@ -56,10 +60,10 @@ class App extends Component {
         </div>
         <div className="app-wrapper">
         <div className="app-nav-bar">
-          <div className="nav-item dates"onClick={() => {this.setState({screenIndex:2})}}>
+          <div className={this.state.screenDisplay===2 ? "nav-item dates currentScreen": "nav-item dates"}onClick={() => {this.udpdatedDisplay(2)}}>
           <p>Post by Dates</p><Dates />
           </div>
-          <div className="nav-item tags" onClick={() => {this.setState({screenIndex:3})}}>
+          <div className={this.state.screenDisplay===3 ? "nav-item tags currentScreen" : "nav-item tags"} onClick={() => {this.udpdatedDisplay(3)}}>
           <p>Tags</p> <Tag1 />
           </div>
           </div>

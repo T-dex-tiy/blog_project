@@ -25,8 +25,6 @@ body {
       cursor: pointer; }
       .app-header .app-wrapper-nav p:hover {
         color: darkslategrey; }
-    .app-header .app-wrapper-nav:hover {
-      color: darkslategrey; }
 
 .app-wrapper {
   display: flex;
@@ -48,7 +46,10 @@ body {
       font-size: 10px;
       border: solid 1px black; }
       .app-wrapper .app-nav-bar .nav-item:hover {
-        background-color: darkslategrey; }
+        background-color: blue; }
+      .app-wrapper .app-nav-bar .nav-item.currentScreen {
+        color: white;
+        background-color: black; }
   .app-wrapper .mainContent {
     flex: 1;
     background-color: red; }
