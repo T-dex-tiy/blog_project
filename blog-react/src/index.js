@@ -9,6 +9,7 @@ import NewHome from './blog/newpost.js';
 import Post from './main-content/mainContent.js';
 import ByTag from './main-content/taggeditem.js';
 import ByDate from './main-content/datedpost.js';
+import All from './main-content/all.js';
 
 import './styles/app.css';
 
@@ -34,6 +35,9 @@ class App extends Component {
       DisplayedScreen = <ByTag />
     }
 
+    if(this.state.screenIndex === 4){
+      DisplayedScreen = <All />
+    }
 
     return (
       <div className="app">
@@ -42,8 +46,7 @@ class App extends Component {
           <div className="app-nav">
             <div className="nav-item new" onClick={() => {this.setState({screenIndex:1})}}>
             <NewHome /></div>
-            <div className="nav-item blog">
-            <Blog /></div>
+            <div className="nav-item blog" onClick={() =>{this.setState({screenIndex:4})}}><All /></div>
             <div className="nav-item about">
             <About /></div>
             <div className="nav-item sites">
@@ -53,10 +56,10 @@ class App extends Component {
         </div>
         <div className="app-wrapper">
         <div className="app-nav-bar">
-          <div className="nav-item dates">
+          <div className="nav-item dates"onClick={() => {this.setState({screenIndex:2})}}>
           <p>Post by Dates</p><Dates />
           </div>
-          <div className="nav-item tags">
+          <div className="nav-item tags" onClick={() => {this.setState({screenIndex:3})}}>
           <p>Tags</p> <Tag1 />
           </div>
           </div>
