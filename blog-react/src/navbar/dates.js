@@ -3,7 +3,9 @@ import React, { Component } from 'react'
 class dates extends Component{
 
   render(){
-    return
+    return (
+      <p>#whatdoyouknow</p>
+    )
   }
 }
 

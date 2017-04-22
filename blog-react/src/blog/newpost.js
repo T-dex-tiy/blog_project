@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
-class Post extends Component{
+class NewHome extends Component{
 
   render(){
     return (
       <div className="blog main">
-      <h1>This is a testus</h1>
+      <p>New Post</p>
       </div>
     )
   }
 }
 
 
-module.exports = Post
+module.exports = NewHome

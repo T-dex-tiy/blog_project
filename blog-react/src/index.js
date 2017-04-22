@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import about from './blog/About.js';
-import blog from './blog/blog.js';
-import sites from './blog/Sites.js';
-import dates from './navbar/dates.js';
+import About from './blog/About.js';
+import Blog from './blog/blog.js';
+import Sites from './blog/Sites.js';
+import Dates from './navbar/dates.js';
 import Tag1 from './navbar/taggins.js';
-import Screen1 from './main-content/mainContent.js';
+import NewHome from './blog/newpost.js';
+import Post from './main-content/mainContent.js';
+import ByTag from './main-content/taggeditem.js';
+import ByDate from './main-content/datedpost.js';
 
 import './styles/app.css';
 
@@ -17,27 +20,29 @@ class App extends Component {
         <div className="app-header">
         <div className="app-wrapper-nav">
           <div className="app-nav">
+            <div className="nav-item new">
+            <NewHome /></div>
             <div className="nav-item blog">
-            <p>Blogs</p></div>
+            <Blog /></div>
             <div className="nav-item about">
-            <p>About</p></div>
+            <About /></div>
             <div className="nav-item sites">
-            <p>Recommended Sites</p></div>
+            <Sites /></div>
           </div>
         </div>
         </div>
         <div className="app-wrapper">
         <div className="app-nav-bar">
           <div className="nav-item dates">
-          <p>Post by Dates</p>
+          <p>Post by Dates</p><Dates />
           </div>
           <div className="nav-item tags">
           <p>Tags</p> <Tag1 />
           </div>
           </div>
           <div className="mainContent">
-            <div className="Screen1">
-              <Screen1 />
+            <div className="Post">
+              <Post />
 
             </div>
           </div>

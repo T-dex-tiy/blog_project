@@ -51,7 +51,9 @@ body {
         background-color: darkslategrey; }
   .app-wrapper .mainContent {
     flex: 1;
-    background-color: blue; }
+    background-color: red; }
+    .app-wrapper .mainContent .blog {
+      margin: 5px; }
 
 .app-footer {
   display: flex;

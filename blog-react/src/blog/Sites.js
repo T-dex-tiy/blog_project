@@ -4,7 +4,7 @@ class sites extends Component{
 
   render(){
     return(
-      <p>TEST</p>
+      <p>Links</p>
     )
   }
 }

@@ -71,7 +71,10 @@ body {
   }
   .mainContent{
     flex:1;
-    background-color:blue;
+    background-color:red;
+    .blog{
+      margin:5px;
+    }
   }
 }
 
