@@ -9,6 +9,8 @@ import Post from './main-content/mainContent.js';
 import ByTag from './main-content/taggeditem.js';
 import ByDate from './main-content/datedpost.js';
 import All from './main-content/all.js';
+import Nav from './components/nav.js';
+import NavBar from './components/navbar.js';
 
 import './styles/app.css';
 
@@ -16,7 +18,7 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenDisplay: 3
+        screenDisplay: 1
       }
     }
 
@@ -45,34 +47,18 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-        <div className="app-wrapper-nav">
-          <div className="app-nav">
-            <div className="nav-item new" onClick={() => {this.udpdatedDisplay(1)}}>
-            <NewHome /></div>
-            <div className={this.state.screenDisplay===4 ? "nav-item all currentScreen":"nav-item all"}  onClick={() =>{this.udpdatedDisplay(4)}}><All /></div>
-            <div className="nav-item about">
-            <About /></div>
-            <div className="nav-item sites">
-            <Sites /></div>
+          <div className="app-wrapper-nav">
+            <Nav screenDisplay ={this.state.screenDisplay} />
           </div>
-        </div>
         </div>
         <div className="app-wrapper">
-        <div className="app-nav-bar">
-          <div className={this.state.screenDisplay===2 ? "nav-item dates currentScreen": "nav-item dates"}onClick={() => {this.udpdatedDisplay(2)}}>
-          <p>Post by Dates</p><Dates />
-          </div>
-          <div className={this.state.screenDisplay===3 ? "nav-item tags currentScreen" : "nav-item tags"} onClick={() => {this.udpdatedDisplay(3)}}>
-          <p>Tags</p> <Tag1 />
-          </div>
+        <NavBar />
           </div>
           <div className="mainContent">
-            <div className="Post">
-              {DisplayedScreen}
-
-            </div>
+          <div className="Post">
+            {DisplayedScreen}
           </div>
-          </div>
+        </div>
         <div className="app-footer"> <p> The Dinosaur Engineering Expierence 2017</p> </div>
       </div>
     )
