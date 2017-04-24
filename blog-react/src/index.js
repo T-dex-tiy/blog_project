@@ -8,6 +8,7 @@ import NewHome from './blog/newpost.js';
 import Post from './main-content/mainContent.js';
 import ByTag from './main-content/taggeditem.js';
 import ByDate from './main-content/datedpost.js';
+import {EventEmitter} from 'events';
 import All from './main-content/all.js';
 import Nav from './components/nav.js';
 import NavBar from './components/navbar.js';
@@ -18,12 +19,19 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenDisplay: 1
+        screenDisplay: 4
       }
     }
+    componentWillMount(){
+      this.eventEmitter = new EventEmitter()
 
-    udpdatedDisplay(newDisplay){
-      this.setState({screenDisplay:newDisplay})
+      this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
+        this.updatedDisplay({newDisplay: screenDisplay})
+      })
+    }
+
+    updatedDisplay(newDisplay){
+      this.setState({screenDisplay: newDisplay})
     }
   render() {
     var DisplayedScreen
@@ -48,16 +56,17 @@ class App extends Component {
       <div className="app">
         <div className="app-header">
           <div className="app-wrapper-nav">
-            <Nav screenDisplay ={this.state.screenDisplay} />
+            <Nav eventEmitter={this.eventEmitter}
+              screenDisplay ={this.state.screenDisplay} />
           </div>
         </div>
         <div className="app-wrapper">
         <NavBar />
-          </div>
           <div className="mainContent">
           <div className="Post">
             {DisplayedScreen}
           </div>
+        </div>
         </div>
         <div className="app-footer"> <p> The Dinosaur Engineering Expierence 2017</p> </div>
       </div>
