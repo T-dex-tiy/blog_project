@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+
 
 class Nav extends Component{
 
@@ -13,9 +14,9 @@ class Nav extends Component{
   render(){
     return (
       <div className="app-nav">
-          <div className="nav-item new" onClick={() => {this.props.eventEmitter.emit("navigateScreen", {screenDisplay:1})}}><p>New Post</p>
+          <div className="nav-item new" onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenDisplay:1})}}><p>New Post</p>
           </div>
-          <div className={this.props.screenDisplay===4 ? "nav-item all currentScreen":"nav-item all"}  onClick={() =>{this.props.eventEmitter.emit("navigateScreen", {screenDisplay:4})}}><p>All</p></div>
+          <div className={this.props.screenDisplay===4 ? "nav-item all currentScreen":"nav-item all"}  onClick={(event) =>{this.props.eventEmitter.emit("navigateScreen", {screenDisplay:4})}}><p>All</p></div>
           <div className="nav-item about">
           <p>About</p></div>
           <div className="nav-item sites">

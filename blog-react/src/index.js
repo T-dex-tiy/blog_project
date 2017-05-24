@@ -1,5 +1,7 @@
+import * as firebase from 'firebase';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory, Link} from 'react-router';
 import About from './blog/About.js';
 import Sites from './blog/Sites.js';
 import Dates from './navbar/dates.js';
@@ -19,18 +21,18 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenDisplay: 4
+        screenDisplay: 1
       }
     }
     componentWillMount(){
       this.eventEmitter = new EventEmitter()
 
       this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
-        this.updatedDisplay({newDisplay: screenDisplay})
+        this.updatePage({newDisplay: screenDisplay})
       })
     }
 
-    updatedDisplay(newDisplay){
+    updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
     }
   render() {
@@ -61,7 +63,8 @@ class App extends Component {
           </div>
         </div>
         <div className="app-wrapper">
-        <NavBar />
+        <NavBar eventEmitter={this.eventEmitter}
+          screenDisplay ={this.state.screenDisplay} />
           <div className="mainContent">
           <div className="Post">
             {DisplayedScreen}
