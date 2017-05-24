@@ -21,7 +21,11 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenDisplay: 1
+        screenDisplay: 1,
+        blogHead:{},
+        blogPost:{},
+        tags:{}
+
       }
     }
     componentWillMount(){
@@ -30,6 +34,8 @@ class App extends Component {
       this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
         this.updatePage({newDisplay: screenDisplay})
       })
+
+      this.eventEmitter.addListener("PostBlog",)
     }
 
     updatePage({newDisplay}){
@@ -39,19 +45,23 @@ class App extends Component {
     var DisplayedScreen
 
     if(this.state.screenDisplay === 1){
-      DisplayedScreen = <Post />
+      DisplayedScreen = <Post blogHead={this.state.blogHead}
+      blogPost={this.state.blogPost} tag={this.state.tags} />
     }
 
     if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate />
+      DisplayedScreen = <ByDate blogHead={this.state.blogHead}
+      blogPost={this.state.blogPost} tag={this.state.tags} />
     }
 
     if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag />
+      DisplayedScreen = <ByTag blogHead={this.state.blogHead}
+      blogPost={this.state.blogPost} tag={this.state.tags} />
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All />
+      DisplayedScreen = <All blogHead={this.state.blogHead}
+      blogPost={this.state.blogPost} tag={this.state.tags} />
     }
 
     return (
