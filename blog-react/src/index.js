@@ -21,7 +21,10 @@ class App extends Component {
     constructor(props){
       super(props)
       this.state = {
-        screenDisplay: 1
+        screenDisplay: 1,
+        blog:{},
+
+
       }
     }
     componentWillMount(){
@@ -30,28 +33,43 @@ class App extends Component {
       this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
         this.updatePage({newDisplay: screenDisplay})
       })
+
     }
 
     updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
     }
+
+  addedNewBlog(newBlog){
+    const newMedia = {...this.state.blog}
+    const key = "t"+ Date.now()
+    newBlog.key= key
+    newMedia[key]=newBlog
+    this.setState({blog:newMedia})
+  }
+
   render() {
     var DisplayedScreen
 
     if(this.state.screenDisplay === 1){
-      DisplayedScreen = <Post />
+      DisplayedScreen = <Post eventEmitter= {this.eventEmitter}
+      createNewBlog ={this.addedNewBlog.bind(this)}
+       />
     }
 
     if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate />
+      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog= {this.state.blog}
+       />
     }
 
     if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag />
+      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog= {this.state.blog}
+       />
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All />
+      DisplayedScreen = <All view ={this.state.blog}
+       />
     }
 
     return (
@@ -65,7 +83,7 @@ class App extends Component {
         <div className="app-wrapper">
         <NavBar eventEmitter={this.eventEmitter}
           screenDisplay ={this.state.screenDisplay} />
-          <div className="mainContent">
+          <div className="mainContent" >
           <div className="Post">
             {DisplayedScreen}
           </div>
