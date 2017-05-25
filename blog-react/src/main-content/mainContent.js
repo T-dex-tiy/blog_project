@@ -12,8 +12,10 @@ class Post extends Component{
   render(){
     return (
       <div className="blog-main">
-      <textarea className="inputField" rows="25" cols="90">What is on Your mind</textarea>
-      <button onClick = {() => {this.props.eventEmitter.emit("PostBlog",{blogHead:43})}}>Submit</button>
+      <textarea id="headField" rows="2" cols="90"></textarea>
+      <textarea id="inputField" rows="25" cols="90"placeholder="What is on Your mind"></textarea>
+      <textarea id="tags" rows="1" cols="90"></textarea>
+      <button onClick = {() => {this.props.eventEmitter.emit("PostBlog",{blogBody:()})}}>Submit</button>
       </div>
     )
   }

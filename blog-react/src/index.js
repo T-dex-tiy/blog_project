@@ -22,7 +22,9 @@ class App extends Component {
       super(props)
       this.state = {
         screenDisplay: 1,
-        blogHead:42,
+        blogHead:{},
+        blogBody:{},
+        tags:{},
 
 
       }
@@ -35,8 +37,8 @@ class App extends Component {
       })
 
       this.eventEmitter.addListener("PostBlog",
-       ({blogHead}) => {
-        this.newBlogPost({newBlog: blogHead})
+       ({blogBody}) => {
+        this.newBlogPost({newBlog: blogBody})
       })
     }
 
@@ -52,22 +54,22 @@ class App extends Component {
     var DisplayedScreen
 
     if(this.state.screenDisplay === 1){
-      DisplayedScreen = <Post eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead}
+      DisplayedScreen = <Post eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
        />
     }
 
     if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate blogHead={this.state.blogHead}
+      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
        />
     }
 
     if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag blogHead={this.state.blogHead}
+      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
        />
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All blogHead={this.state.blogHead}
+      DisplayedScreen = <All eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
        />
     }
 
