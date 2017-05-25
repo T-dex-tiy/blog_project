@@ -22,9 +22,7 @@ class App extends Component {
       super(props)
       this.state = {
         screenDisplay: 1,
-        blogHead:{},
-        blogBody:{},
-        tags:{},
+        blog:{},
 
 
       }
@@ -36,40 +34,41 @@ class App extends Component {
         this.updatePage({newDisplay: screenDisplay})
       })
 
-      this.eventEmitter.addListener("PostBlog",
-       ({blogBody}) => {
-        this.newBlogPost({newBlog: blogBody})
-      })
     }
 
     updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
     }
-    newBlogPost({newBlog}){
-      this.setState({blogHead: newBlog})
-    }
 
+  addedNewBlog(newBlog){
+    const newMedia = {...this.state.blog}
+    const key = "t"+ Date.now()
+    newBlog.key= key
+    newMedia[key]=newBlog
+    this.setState({blog:newMedia})
+  }
 
   render() {
     var DisplayedScreen
 
     if(this.state.screenDisplay === 1){
-      DisplayedScreen = <Post eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
+      DisplayedScreen = <Post eventEmitter= {this.eventEmitter}
+      createNewBlog ={this.addedNewBlog.bind(this)}
        />
     }
 
     if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
+      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog= {this.state.blog}
        />
     }
 
     if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
+      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog= {this.state.blog}
        />
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead} blogBody ={this.state.blogBody} tags = {this.state.tags}
+      DisplayedScreen = <All eventEmitter= {this.eventEmitter} blog= {this.state.blog}
        />
     }
 

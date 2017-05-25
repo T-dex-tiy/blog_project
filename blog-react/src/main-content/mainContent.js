@@ -3,19 +3,35 @@ import React, { Component } from 'react'
 class Post extends Component{
   constructor(){
     super()
-    this.state={
+    this.newBlog = this.newBlog.bind(this)
+  }
 
-
+  newBlog(event) {
+    if(!this.refs.mainBlog){
+      return
     }
+    const newBlog ={
+      head: this.refs.blogHead.value,
+      body: this.refs.mainBlog.value,
+      tags: this.refs.tags.value,
+    }
+    event.preventDefault()
+
+    this.props.createNewBlog(newBlog)
+
+    document.querySelector('#blogHead').value = ""
+    document.querySelector('#mainBlog').value = ""
+    document.querySelector('#btags').value = ""
   }
 
   render(){
     return (
       <div className="blog-main">
-      <textarea id="headField" rows="2" cols="90"></textarea>
-      <textarea id="inputField" rows="25" cols="90"placeholder="What is on Your mind"></textarea>
-      <textarea id="tags" rows="1" cols="90"></textarea>
-      <button onClick = {() => {this.props.eventEmitter.emit("PostBlog",{blogBody:()})}}>Submit</button>
+      <textarea id="headField" rows="2" cols="90" ref="blogHead"></textarea>
+      <textarea id="inputField"
+        ref="mainBlog" rows="25" cols="90" placeholder="What is on Your mind"></textarea>
+      <textarea id="tags" ref="tags" rows="1" cols="90"></textarea>
+      <button onClick ={this.newBlog}>Submit</button>
       </div>
     )
   }
