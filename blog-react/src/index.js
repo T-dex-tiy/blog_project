@@ -22,9 +22,8 @@ class App extends Component {
       super(props)
       this.state = {
         screenDisplay: 1,
-        blogHead:{},
-        blogPost:{},
-        tags:{}
+        blogHead:42,
+
 
       }
     }
@@ -35,33 +34,41 @@ class App extends Component {
         this.updatePage({newDisplay: screenDisplay})
       })
 
-      this.eventEmitter.addListener("PostBlog",)
+      this.eventEmitter.addListener("PostBlog",
+       ({blogHead}) => {
+        this.newBlogPost({newBlog: blogHead})
+      })
     }
 
     updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
     }
+    newBlogPost({newBlog}){
+      this.setState({blogHead: newBlog})
+    }
+
+
   render() {
     var DisplayedScreen
 
     if(this.state.screenDisplay === 1){
-      DisplayedScreen = <Post blogHead={this.state.blogHead}
-      blogPost={this.state.blogPost} tag={this.state.tags} />
+      DisplayedScreen = <Post eventEmitter= {this.eventEmitter} blogHead = {this.state.blogHead}
+       />
     }
 
     if(this.state.screenDisplay === 2){
       DisplayedScreen = <ByDate blogHead={this.state.blogHead}
-      blogPost={this.state.blogPost} tag={this.state.tags} />
+       />
     }
 
     if(this.state.screenDisplay === 3){
       DisplayedScreen = <ByTag blogHead={this.state.blogHead}
-      blogPost={this.state.blogPost} tag={this.state.tags} />
+       />
     }
 
     if(this.state.screenDisplay === 4){
       DisplayedScreen = <All blogHead={this.state.blogHead}
-      blogPost={this.state.blogPost} tag={this.state.tags} />
+       />
     }
 
     return (
@@ -75,7 +82,7 @@ class App extends Component {
         <div className="app-wrapper">
         <NavBar eventEmitter={this.eventEmitter}
           screenDisplay ={this.state.screenDisplay} />
-          <div className="mainContent">
+          <div className="mainContent" >
           <div className="Post">
             {DisplayedScreen}
           </div>

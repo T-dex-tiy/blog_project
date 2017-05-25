@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 
 class Post extends Component{
-  constructor(props){
-    super(props)
+  constructor(){
+    super()
     this.state={
 
 
@@ -11,10 +11,9 @@ class Post extends Component{
 
   render(){
     return (
-      <div className="blog main">
+      <div className="blog-main">
       <textarea className="inputField" rows="25" cols="90">What is on Your mind</textarea>
-      <button>Submit</button>
-
+      <button onClick = {() => {this.props.eventEmitter.emit("PostBlog",{blogHead:43})}}>Submit</button>
       </div>
     )
   }
