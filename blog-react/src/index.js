@@ -68,7 +68,7 @@ class App extends Component {
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All eventEmitter= {this.eventEmitter} blog= {this.state.blog}
+      DisplayedScreen = <All view ={this.state.blog}
        />
     }
 
