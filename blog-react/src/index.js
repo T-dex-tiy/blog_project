@@ -1,8 +1,6 @@
-import * as firebase from 'firebase';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory, Link} from 'react-router';
-import Rebase from 're-base':
+import Rebase from 're-base';
 import About from './blog/About.js';
 import Sites from './blog/Sites.js';
 import Dates from './navbar/dates.js';
@@ -18,14 +16,13 @@ import Nav from './components/nav.js';
 import NavBar from './components/navbar.js';
 import './styles/app.css';
 
-const base =
-Rebase.createClass({
+const base = Rebase.createClass({
   apiKey: "AIzaSyAZzsLt4oX0-d20ygSn4k0R5vOiHG8TuVE",
  authDomain: "captainradmcsaucypants2.firebaseapp.com",
  databaseURL: "https://captainradmcsaucypants2.firebaseio.com",
  projectId: "captainradmcsaucypants2",
  storageBucket: "captainradmcsaucypants2.appspot.com",
- messagingSenderId: "523061406446"
+ messagingSenderId: "523061406446",
 }, 'captainradmcsaucypants2');
 
 class App extends Component {
@@ -40,10 +37,13 @@ class App extends Component {
     }
 
     compnentDidMount(){
-      base.SynState('blog',{
+      base.syncState('Blogs', {
         content: this,
         state:'blog',
       });
+    }
+    componentWillUnmount(){
+      base.removeBinding(this.ref);
     }
     componentWillMount(){
       this.eventEmitter = new EventEmitter()
@@ -54,9 +54,6 @@ class App extends Component {
     }
     updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
-    }
-    componentWillUnmount(){
-      base.removeBinding(this.ref);
     }
 
     addedNewBlog(newBlog){
