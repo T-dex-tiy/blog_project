@@ -19,19 +19,26 @@ class Post extends Component{
 
     this.props.createNewBlog(newBlog)
 
-    document.querySelector('#blogHead').value = ""
-    document.querySelector('#mainBlog').value = ""
-    document.querySelector('#btags').value = ""
+    // document.querySelector('#blogHead').value = ""
+    // document.querySelector('#mainBlog').value = ""
+    // document.querySelector('#btags').value = ""
   }
 
   render(){
     return (
       <div className="blog-main">
-      <textarea id="headField" rows="2" cols="90" ref="blogHead"></textarea>
-      <textarea id="inputField"
-        ref="mainBlog" rows="25" cols="90" placeholder="What is on Your mind"></textarea>
-      <textarea id="tags" ref="tags" rows="1" cols="90"></textarea>
-      <button onClick ={this.newBlog}>Submit</button>
+        <div>
+          <textarea id="headField" rows="2" cols="90" ref="blogHead"></textarea>
+        </div>
+        <div>
+          <textarea id="inputField"
+            ref="mainBlog" rows="25" cols="90" placeholder="What is on Your mind"></textarea>
+        </div>
+        <div>
+        <textarea id="tags" ref="tags" rows="1" cols="90"></textarea>
+        </div>
+
+        <button onClick ={this.newBlog}>Submit</button>
       </div>
     )
   }

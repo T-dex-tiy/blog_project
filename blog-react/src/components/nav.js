@@ -19,8 +19,8 @@ class Nav extends Component{
           <div className={this.props.screenDisplay===4 ? "nav-item all currentScreen":"nav-item all"}  onClick={(event) =>{this.props.eventEmitter.emit("navigateScreen", {screenDisplay:4})}}><p>All</p></div>
           <div className="nav-item about">
           <p>About</p></div>
-          <div className="nav-item sites">
-          <p>Sites </p></div>
+          <div className={this.props.screenDisplay===5 ? "nav-item all currentScreen":"nav-item all"}  onClick={(event) =>{this.props.eventEmitter.emit("navigateScreen", {screenDisplay:5})}}>
+          <p>Sites</p></div>
       </div>
     )
   }

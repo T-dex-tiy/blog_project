@@ -2,6 +2,7 @@ import * as firebase from 'firebase';
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute, browserHistory, Link} from 'react-router';
+import Rebase from 're-base':
 import About from './blog/About.js';
 import Sites from './blog/Sites.js';
 import Dates from './navbar/dates.js';
@@ -11,11 +12,21 @@ import Post from './main-content/mainContent.js';
 import ByTag from './main-content/taggeditem.js';
 import ByDate from './main-content/datedpost.js';
 import {EventEmitter} from 'events';
+import Links from './main-content/linkpages.js';
 import All from './main-content/all.js';
 import Nav from './components/nav.js';
 import NavBar from './components/navbar.js';
-
 import './styles/app.css';
+
+const base =
+Rebase.createClass({
+  apiKey: "AIzaSyAZzsLt4oX0-d20ygSn4k0R5vOiHG8TuVE",
+ authDomain: "captainradmcsaucypants2.firebaseapp.com",
+ databaseURL: "https://captainradmcsaucypants2.firebaseio.com",
+ projectId: "captainradmcsaucypants2",
+ storageBucket: "captainradmcsaucypants2.appspot.com",
+ messagingSenderId: "523061406446"
+}, 'captainradmcsaucypants2');
 
 class App extends Component {
     constructor(props){
@@ -27,26 +38,46 @@ class App extends Component {
 
       }
     }
+
+    compnentDidMount(){
+      base.SynState('blog',{
+        content: this,
+        state:'blog',
+      });
+    }
     componentWillMount(){
       this.eventEmitter = new EventEmitter()
 
       this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
         this.updatePage({newDisplay: screenDisplay})
       })
-
     }
-
     updatePage({newDisplay}){
       this.setState({screenDisplay: newDisplay})
     }
+    componentWillUnmount(){
+      base.removeBinding(this.ref);
+    }
 
-  addedNewBlog(newBlog){
-    const newMedia = {...this.state.blog}
-    const key = "t"+ Date.now()
-    newBlog.key= key
-    newMedia[key]=newBlog
-    this.setState({blog:newMedia})
-  }
+    addedNewBlog(newBlog){
+      const newMedia = {...this.state.blog}
+      const key = "t"+ Date.now()
+      newBlog.key= key
+      newMedia[key]=newBlog
+      this.setState({blog:newMedia})
+    }
+
+    displayBlog(){
+      const keys =
+      Object.keys(this.state.blog).filter( currentKey =>{
+        const blog =
+        this.state.blog[currentKey]
+      })
+      return keys.map( currentKey =>{
+        return
+        (this.state.blog)[currentKey]
+      })
+    }
 
   render() {
     var DisplayedScreen
@@ -58,19 +89,23 @@ class App extends Component {
     }
 
     if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog= {this.state.blog}
+      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog = {this.state.blog}
        />
     }
 
     if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog= {this.state.blog}
+      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog = {this.state.blog}
        />
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All view ={this.state.blog}
-       />
-    }
+      DisplayedScreen = <All view ={this.state.blog}/>
+      }
+
+    if(this.state.screenDisplay === 5){
+      DisplayedScreen = <Links eventEmitter= {this.eventEmitter}/>
+      }
+
 
     return (
       <div className="app">

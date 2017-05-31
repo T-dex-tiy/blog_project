@@ -92,3 +92,18 @@ body {
   justify-content: center;
   color:white;
 }
+
+.linkpages{
+  text-align: center;
+  font-size: 2em;
+  color:white;
+
+  .covfefe{
+    color:white;
+    cursor: crosshair;
+  &:hover{
+    color:black;
+    }
+
+  }
+}

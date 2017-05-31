@@ -66,4 +66,14 @@ body {
   justify-content: center;
   color: white; }
 
+.linkpages {
+  text-align: center;
+  font-size: 2em;
+  color: white; }
+  .linkpages .covfefe {
+    color: white;
+    cursor: crosshair; }
+    .linkpages .covfefe:hover {
+      color: black; }
+
 /*# sourceMappingURL=app.css.map */

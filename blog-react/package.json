@@ -8,6 +8,7 @@
     "firebase": "^3.8.0",
     "history": "^4.6.1",
     "lodash": "^4.17.4",
+    "re-base": "^3.0.1",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1"
