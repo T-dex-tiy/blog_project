@@ -12,7 +12,7 @@ class All extends Component{
   render(){
     return (
       <div className="AllBlogs">
-        <NavBar eventEmitter={this.eventEmitter}/>
+        <NavBar view={this.props.view}/>
         <div>
           {Object.keys(this.props.view).map(key=>{return<Entry key={key} post={this.props.view[key]}/>})}
         </div>

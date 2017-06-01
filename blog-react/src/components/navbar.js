@@ -4,21 +4,63 @@ class NavBar extends Component{
 
   constructor(props){
     super(props)
-    this.state={
 
-
-    }
   }
 
   render(){
     return (
       <div className="app-nav-bar">
         <div
-          className={this.props.screenDisplay===2 ? "nav-item dates currentScreen" : "nav-item dates"}onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenDisplay:2})}}>
-        <p>Post by Date</p></div>
+          className="nav-item dates">
+          <p>January Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>Febuaray Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>March Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>April Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>May Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>June Post</p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>July Post </p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>August Post </p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>September Post </p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>October Post </p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>November Post </p>
+        </div>
+        <div
+          className="nav-item dates">
+          <p>December Post </p>
+        </div>
 
         <div
-          className={this.props.screenDisplay===3 ? "nav-item tags currentScreen" : "nav-item tags"} onClick={(event) => {this.props.eventEmitter.emit("navigateScreen", {screenDisplay:3})}}>
+          className= "nav-item tags">
         <p>Tags</p>
         </div>
       </div>
