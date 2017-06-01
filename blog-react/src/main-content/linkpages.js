@@ -23,6 +23,7 @@ class Links extends Component{
       <div>
         <a href="https://goodfuckingdesignadvice.com/#/advice/213"
         className="covfefe">GFDA</a>
+      <div>(Shouldn't look at work)</div>
       </div>
 
       </div>

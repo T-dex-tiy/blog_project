@@ -18,63 +18,64 @@ import './styles/app.css';
 
 const base = Rebase.createClass({
   apiKey: "AIzaSyAZzsLt4oX0-d20ygSn4k0R5vOiHG8TuVE",
- authDomain: "captainradmcsaucypants2.firebaseapp.com",
- databaseURL: "https://captainradmcsaucypants2.firebaseio.com",
- projectId: "captainradmcsaucypants2",
- storageBucket: "captainradmcsaucypants2.appspot.com",
- messagingSenderId: "523061406446",
+  authDomain: "captainradmcsaucypants2.firebaseapp.com",
+  databaseURL: "https://captainradmcsaucypants2.firebaseio.com",
+  projectId: "captainradmcsaucypants2",
+  storageBucket: "captainradmcsaucypants2.appspot.com",
+  messagingSenderId: "523061406446"
 }, 'captainradmcsaucypants2');
 
 class App extends Component {
-    constructor(props){
-      super(props)
-      this.state = {
-        screenDisplay: 1,
-        blog:{},
+  constructor(props){
+    super(props)
+    this.state = {
+      screenDisplay: 1,
+      blog:{},
+    }
+  }
 
+  compnentDidMount(){
+    base.syncState('Blog', {
+      content: this,
+      state:'blog',
+    });
+  }
 
-      }
-    }
+  componentWillUnmount(){
+    base.removeBinding(this.ref);
+  }
 
-    compnentDidMount(){
-      base.syncState('Blogs', {
-        content: this,
-        state:'blog',
-      });
-    }
-    componentWillUnmount(){
-      base.removeBinding(this.ref);
-    }
-    componentWillMount(){
-      this.eventEmitter = new EventEmitter()
+  componentWillMount(){
+    this.eventEmitter = new EventEmitter()
 
-      this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
-        this.updatePage({newDisplay: screenDisplay})
-      })
-    }
-    updatePage({newDisplay}){
-      this.setState({screenDisplay: newDisplay})
-    }
+    this.eventEmitter.addListener("navigateScreen",  ({screenDisplay}) => {
+      this.updatePage({newDisplay: screenDisplay})
+    })
+  }
 
-    addedNewBlog(newBlog){
-      const newMedia = {...this.state.blog}
-      const key = "t"+ Date.now()
-      newBlog.key= key
-      newMedia[key]=newBlog
-      this.setState({blog:newMedia})
-    }
+  updatePage({newDisplay}){
+    this.setState({screenDisplay: newDisplay})
+  }
 
-    displayBlog(){
-      const keys =
-      Object.keys(this.state.blog).filter( currentKey =>{
-        const blog =
-        this.state.blog[currentKey]
-      })
-      return keys.map( currentKey =>{
-        return
-        (this.state.blog)[currentKey]
-      })
-    }
+  addedNewBlog(newBlog){
+    const newMedia = {...this.state.blog}
+    const key = "t"+ Date.now()
+    newBlog.key= key
+    newMedia[key]=newBlog
+    this.setState({blog:newMedia})
+  }
+
+  displayBlog(){
+    const keys =
+    Object.keys(this.state.blog).filter( currentKey =>{
+      const blog =
+      this.state.blog[currentKey]
+    })
+    return keys.map( currentKey =>{
+      return
+      (this.state.blog)[currentKey]
+    })
+  }
 
   render() {
     var DisplayedScreen
@@ -85,15 +86,15 @@ class App extends Component {
        />
     }
 
-    if(this.state.screenDisplay === 2){
-      DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog = {this.state.blog}
-       />
-    }
-
-    if(this.state.screenDisplay === 3){
-      DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog = {this.state.blog}
-       />
-    }
+    // if(this.state.screenDisplay === 2){
+    //   DisplayedScreen = <ByDate eventEmitter= {this.eventEmitter} blog = {this.state.blog}
+    //    />
+    // }
+    //
+    // if(this.state.screenDisplay === 3){
+    //   DisplayedScreen = <ByTag eventEmitter= {this.eventEmitter} blog = {this.state.blog}
+    //    />
+    // }
 
     if(this.state.screenDisplay === 4){
       DisplayedScreen = <All view ={this.state.blog}/>
@@ -113,8 +114,6 @@ class App extends Component {
           </div>
         </div>
         <div className="app-wrapper">
-        <NavBar eventEmitter={this.eventEmitter}
-          screenDisplay ={this.state.screenDisplay} />
           <div className="mainContent" >
           <div className="Post">
             {DisplayedScreen}

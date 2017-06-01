@@ -45,7 +45,7 @@ body {
 
 
 
-.app-wrapper {
+.AllBlogs{
   display:flex;
   flex-direction:row;
   justify-content: flex-start;
@@ -81,6 +81,19 @@ body {
     .blog{
       margin:5px;
     }
+  }
+}
+.mainContent{
+  display:flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height:750px;
+  height:100%;
+  flex:1;
+  background-color:red;
+  .blog{
+    margin:5px;
   }
 }
 

@@ -1,4 +1,7 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import Dates from '../navbar/dates.js';
+import Tag1 from '../navbar/taggins.js';
+import NavBar from '../components/navbar.js';
 
 class All extends Component{
   constructor(props){
@@ -14,7 +17,9 @@ class All extends Component{
 }
   render(){
     return (
-      <div>
+      <div className="AllBlogs">
+        <NavBar eventEmitter={this.eventEmitter}
+          screenDisplay ={this.props.screenDisplay} />
         <h2>How</h2>
         <p>do I Get the info to </p>
         <p>Display???</p>
