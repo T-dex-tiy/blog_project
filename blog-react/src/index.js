@@ -30,7 +30,14 @@ class App extends Component {
     super(props)
     this.state = {
       screenDisplay: 1,
-      blog:{},
+      blog:{
+        t42:{
+          head:"here is my Head",
+          body:"Here is my body",
+          tags:"adsf",
+          key:"t42",
+        }
+      },
     }
   }
 
@@ -97,7 +104,7 @@ class App extends Component {
     // }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All view ={this.state.blog}/>
+      DisplayedScreen = <All view={this.state.blog}/>
       }
 
     if(this.state.screenDisplay === 5){
