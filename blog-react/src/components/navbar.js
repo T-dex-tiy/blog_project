@@ -2,9 +2,16 @@ import React, { Component } from 'react'
 
 class NavBar extends Component{
 
+
   constructor(props){
     super(props)
-
+    const postByDate =
+    Object.keys(this.props.view).filter(currentKey=>{
+      const month =
+      this.props.view[currentKey]
+      console.log(month);
+      return  ;
+    })
   }
 
   render(){

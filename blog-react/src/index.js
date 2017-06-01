@@ -30,7 +30,22 @@ class App extends Component {
     super(props)
     this.state = {
       screenDisplay: 1,
-      blog:{},
+      blog:{
+          t42:
+          {
+          body:"Wakka",
+          head:"Sucka",
+          key:"t42",
+          tags:"Flokka",},
+
+          t43:
+          {
+          body:"Wakka",
+          head:"Sucka",
+          key:"t43",
+          tags:"Flokka",}
+
+      },
     }
   }
 
@@ -65,6 +80,13 @@ class App extends Component {
     this.setState({blog:newMedia})
   }
 
+  blogDate(key){
+    let date = this.state.blog
+    const updatedDate=(new Date()).toString()
+    date[key].updatedDate= updatedDate
+    this.setState({blog: date})
+  }
+
   displayBlog(){
     const keys =
     Object.keys(this.state.blog).filter( currentKey =>{
@@ -87,7 +109,7 @@ class App extends Component {
     }
 
     if(this.state.screenDisplay === 4){
-      DisplayedScreen = <All view={this.state.blog}/>
+      DisplayedScreen = <All view={this.state.blog} blogDate={this.blogDate.bind(this)} />
       }
 
     if(this.state.screenDisplay === 5){
