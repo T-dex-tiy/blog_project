@@ -35,14 +35,14 @@ class App extends Component {
           {
           body:"Wakka",
           head:"Sucka",
-          key:"t42",
+          key:"November 12, 1992",
           tags:"Flokka",},
 
           t43:
           {
           body:"Wakka",
           head:"Sucka",
-          key:"t43",
+          key:"December 12, 1992",
           tags:"Flokka",}
 
       },
