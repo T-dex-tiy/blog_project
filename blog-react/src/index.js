@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Rebase from 're-base';
+import firebase from 'firebase';
 import About from './blog/About.js';
 import Sites from './blog/Sites.js';
 import Dates from './navbar/dates.js';
@@ -16,14 +17,14 @@ import Nav from './components/nav.js';
 import NavBar from './components/navbar.js';
 import './styles/app.css';
 
-const base = Rebase.createClass({
+const app = firebase.initializeApp({
   apiKey: "AIzaSyAZzsLt4oX0-d20ygSn4k0R5vOiHG8TuVE",
   authDomain: "captainradmcsaucypants2.firebaseapp.com",
   databaseURL: "https://captainradmcsaucypants2.firebaseio.com",
-  projectId: "captainradmcsaucypants2",
   storageBucket: "captainradmcsaucypants2.appspot.com",
-  messagingSenderId: "523061406446"
-}, 'captainradmcsaucypants2');
+});
+
+const base = Rebase.createClass(app.database());
 
 class App extends Component {
   constructor(props){
@@ -49,16 +50,15 @@ class App extends Component {
     }
   }
 
-  compnentDidMount(){
-    base.syncState('Blog', {
-      content: this,
-      state:'blog',
+  componentDidMount(){
+    base.syncState(`Blogs`, {
+      context: this,
+      state: 'blog',
     });
   }
-
   componentWillUnmount(){
-    base.removeBinding(this.ref);
-  }
+  base.removeBinding(this.ref);
+}
 
   componentWillMount(){
     this.eventEmitter = new EventEmitter()
