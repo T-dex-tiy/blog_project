@@ -107,6 +107,9 @@ class App extends Component {
       createNewBlog ={this.addedNewBlog.bind(this)}
        />
     }
+    if(this.state.screenDisplay === 3){
+      DisplayedScreen = <About view={this.state.blog} blogDate={this.blogDate.bind(this)} />
+      }
 
     if(this.state.screenDisplay === 4){
       DisplayedScreen = <All view={this.state.blog} blogDate={this.blogDate.bind(this)} />
