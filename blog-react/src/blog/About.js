@@ -7,10 +7,13 @@ class about extends Component{
 
   render(){
     return (
-      <div>
+      <div className="profile">
         <div className="Hero">
             <h2>Loud and Original</h2>
-            <a></a>
+        </div>
+        <div className="bio">
+          <h1>Adventure based web design and pursuing the next big idea.</h1>
+          <p>Many years of being a ski bum have lead me on many adventures all over the United States. An Injury lead me down a path that I was always interested in but never thought I would go down. Bold has always been a part of who I am, time to share that with the world</p>
         </div>
       </div>
     )

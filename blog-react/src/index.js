@@ -30,7 +30,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      screenDisplay: 1,
+      screenDisplay: 3,
       blog:{},
     }
   }
