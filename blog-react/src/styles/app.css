@@ -115,6 +115,7 @@ body {
     display: flex;
     align-content: center; }
   .app-wrapper .Hero {
+    border: 1px solid white;
     position: absolute;
     font-family: Tattoo;
     background: url("images/herobanner.jpg") no-repeat center center fixed;
@@ -125,11 +126,16 @@ body {
       text-align: center;
       padding-top: 260px; }
   .app-wrapper .bio {
+    border: 1px solid white;
     background: none center center fixed;
     position: absolute;
     padding-top: 600px;
     width: 100%;
     text-align: center;
     color: white; }
+
+.profilelinks {
+  display: flex;
+  border: 1px dotted blue; }
 
 /*# sourceMappingURL=app.css.map */
