@@ -5,6 +5,7 @@
 
 *{
   font-family: Tattoo;
+  color:white;
 }
 body {
   margin: 0;
@@ -12,24 +13,39 @@ body {
 }
 
 .app-header{
-  height:5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:5.5em;
   background-color: black;
   width: 100%;
   padding:1px;
   margin:1px;
 
-  .app-wrapper-nav {
+  .Logo{
+    padding-top: 0;
+  }
+  .app-nav{
     display:flex;
-    flex-direction:row-reverse;
-    justify-content: flex-start;
+    align-content: flex-end;
     color:white;
-    height:100%;
+    }
+    .navcompnents{
+      display: flex;
+      align-self: flex-start;
+      width:100%
 
-
-
-    .app-nav{
+    }
+    .direction{
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    // padding-left: 55em;
+    p{
+    align-items: flex-end;
     color:white;
 
+    }
     &.currentPage{
       color:darkslategrey;
     }
@@ -46,7 +62,7 @@ body {
     }
 
   }
-}
+
 
 
 

@@ -31,22 +31,7 @@ class App extends Component {
     super(props)
     this.state = {
       screenDisplay: 1,
-      blog:{
-          t42:
-          {
-          body:"Wakka",
-          head:"Sucka",
-          key:"November 12, 1992",
-          tags:"Flokka",},
-
-          t43:
-          {
-          body:"Wakka",
-          head:"Sucka",
-          key:"December 12, 1992",
-          tags:"Flokka",}
-
-      },
+      blog:{},
     }
   }
 
@@ -123,10 +108,9 @@ class App extends Component {
     return (
       <div className="app">
         <div className="app-header">
-          <div className="app-wrapper-nav">
+          <div className="Logo"><h1>Dex Mills Designs</h1></div>
             <Nav eventEmitter={this.eventEmitter}
               screenDisplay ={this.state.screenDisplay} />
-          </div>
         </div>
         <div className="app-wrapper">
           <div className="mainContent" >

@@ -2,34 +2,47 @@
   font-family: Tattoo;
   src: url("./fonts/FreehandTattooOne.ttf"); }
 * {
-  font-family: Tattoo; }
+  font-family: Tattoo;
+  color: white; }
 
 body {
   margin: 0;
   padding: 0; }
 
 .app-header {
-  height: 5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5.5em;
   background-color: black;
   width: 100%;
   padding: 1px;
   margin: 1px; }
-  .app-header .app-wrapper-nav {
+  .app-header .Logo {
+    padding-top: 0; }
+  .app-header .app-nav {
     display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    color: white;
-    height: 100%; }
-    .app-header .app-wrapper-nav .app-nav {
+    align-content: flex-end;
+    color: white; }
+  .app-header .navcompnents {
+    display: flex;
+    align-self: flex-start;
+    width: 100%; }
+  .app-header .direction {
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column; }
+    .app-header .direction p {
+      align-items: flex-end;
       color: white; }
-      .app-header .app-wrapper-nav .app-nav.currentPage {
-        color: darkslategrey; }
-    .app-header .app-wrapper-nav p {
-      margin: 0;
-      padding: 0;
-      cursor: pointer; }
-      .app-header .app-wrapper-nav p:hover {
-        color: darkslategrey; }
+    .app-header .direction.currentPage {
+      color: darkslategrey; }
+  .app-header p {
+    margin: 0;
+    padding: 0;
+    cursor: pointer; }
+    .app-header p:hover {
+      color: darkslategrey; }
 
 .AllBlogs {
   display: flex;
