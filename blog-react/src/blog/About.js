@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Herobanner from '../images/herobanner.jpg';
 
 class about extends Component{
   constructor(props){
@@ -9,7 +8,10 @@ class about extends Component{
   render(){
     return (
       <div>
-      <img className="Hero" src={Herobanner}></img>
+        <div className="Hero">
+            <h2>Loud and Original</h2>
+            <a></a>
+        </div>
       </div>
     )
   }

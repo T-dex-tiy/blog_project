@@ -4,15 +4,15 @@
 }
 
 *{
-  font-family: Tattoo;
   color:white;
 }
 body {
   margin: 0;
   padding: 0;
 }
-
+///HEADERITEMS
 .app-header{
+  font-family: Tattoo;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -65,7 +65,7 @@ body {
 
 
 
-
+///ALLBLOGS
 .AllBlogs{
   display:flex;
   flex-direction:row;
@@ -104,6 +104,8 @@ body {
     }
   }
 }
+
+///BLOGCONTENT
 .mainContent{
   display:flex;
   flex-direction:row;
@@ -127,6 +129,7 @@ body {
   color:white;
 }
 
+///LINKPAGES
 .linkpages{
   text-align: end;
   font-size: 2em;
@@ -140,4 +143,19 @@ body {
     }
 
   }
+}
+
+///ABOUTPAGE
+
+.Hero{
+  position:absolute;
+  font-family:Tattoo;
+  background:url('images/herobanner.jpg') no-repeat center center fixed;
+  background-size:cover;
+  width:100%;
+  height:580px;
+ h2{
+   text-align: center;
+   padding-top: 260px;
+ }
 }
