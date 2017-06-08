@@ -73,7 +73,8 @@ body {
     flex: 1;
     background-color: red; }
     .AllBlogs .mainContent .blog {
-      margin: 5px; }
+      margin: 5px;
+      padding: 5px; }
 
 .mainContent {
   display: flex;
@@ -84,8 +85,11 @@ body {
   height: 100%;
   flex: 1;
   background-color: red; }
-  .mainContent .blog {
+  .mainContent .blog-main {
+    color: black;
     margin: 5px; }
+    .mainContent .blog-main .button {
+      color: black; }
 
 .app-footer {
   display: flex;
@@ -115,16 +119,20 @@ body {
     display: flex;
     align-content: center; }
   .app-wrapper .Hero {
-    border: 1px solid white;
+    border: 5px dotted white;
     position: absolute;
     font-family: Tattoo;
     background: url("images/herobanner.jpg") no-repeat center center fixed;
     background-size: cover;
     width: 100%;
-    height: 580px; }
+    height: 580px;
+    padding: 1px;
+    margin: 1px; }
     .app-wrapper .Hero h2 {
       text-align: center;
-      padding-top: 260px; }
+      padding-top: 260px;
+      padding-bottom: 260px;
+      margin: 50px; }
   .app-wrapper .bio {
     border: 1px solid white;
     background: none center center fixed;
@@ -135,7 +143,6 @@ body {
     color: white; }
 
 .profilelinks {
-  display: flex;
   border: 1px dotted blue; }
 
 /*# sourceMappingURL=app.css.map */
