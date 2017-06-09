@@ -114,9 +114,7 @@ class App extends Component {
         </div>
         <div className="app-wrapper">
           <div className="mainContent" >
-          <div className="Post">
             {DisplayedScreen}
-          </div>
         </div>
         </div>
         <div className="app-footer"> <p> The Dinosaur Engineering Expierence 2017</p> </div>

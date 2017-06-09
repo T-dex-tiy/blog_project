@@ -37,7 +37,6 @@ class Post extends Component{
         <div>
         <textarea id="tags" ref="tags" rows="1" cols="90"></textarea>
         </div>
-
         <button className="button" onClick={this.newBlog}>Submit</button>
       </div>
     )
