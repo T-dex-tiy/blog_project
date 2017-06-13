@@ -217,9 +217,14 @@ body {
   display: flex;
   margin-top:1px;
   width: 100%;
-  .links{
-    display: flex;
-    text-align: center;
-  }
+  border:1px solid black;
+    .portfolio{
+      flex-wrap: wrap;
+      flex-grow: 1;
+      padding:2em;
+      height: 18em;
+      width: 18em;
+      border: 2px dotted black;
+    }
 
 }

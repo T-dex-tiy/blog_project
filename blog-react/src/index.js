@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { browserHistory, Router, Route, IndexRoute } from 'react-router';
 import Rebase from 're-base';
 import firebase from 'firebase';
 import About from './blog/About.js';
@@ -125,6 +126,8 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App />,
+  <Router history={browserHistory}>
+    <Route path="/" component={App}/>
+  </Router>,
   document.getElementById('root')
 );

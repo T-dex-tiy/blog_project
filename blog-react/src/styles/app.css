@@ -160,9 +160,14 @@ body {
 .profilelinks {
   display: flex;
   margin-top: 1px;
-  width: 100%; }
-  .profilelinks .links {
-    display: flex;
-    text-align: center; }
+  width: 100%;
+  border: 1px solid black; }
+  .profilelinks .portfolio {
+    flex-wrap: wrap;
+    flex-grow: 1;
+    padding: 2em;
+    height: 18em;
+    width: 18em;
+    border: 2px dotted black; }
 
 /*# sourceMappingURL=app.css.map */
