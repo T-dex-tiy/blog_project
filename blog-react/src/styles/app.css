@@ -163,11 +163,11 @@ body {
   width: 100%;
   border: 1px solid black; }
   .profilelinks .portfolio {
-    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
     flex-grow: 1;
     padding: 2em;
     height: 18em;
-    width: 18em;
-    border: 2px dotted black; }
+    width: 18em; }
 
 /*# sourceMappingURL=app.css.map */

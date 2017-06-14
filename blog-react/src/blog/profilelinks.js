@@ -8,12 +8,10 @@ class Projects extends Component{
   render(){
     return (
       <div className="profilelinks">
-      <div className="webProjects one"><img className="portfolio" src={WebProjects}/></div>
-      <div className="webProjects two"><img className="portfolio" src={WebProjects}/></div>
-      <div className="webProjects three"><img className="portfolio" src={WebProjects}/></div>
-      <div className="webProjects four"><img className="portfolio" src={WebProjects}/></div>
-      <div className="webProjects five"><img className="portfolio" src={WebProjects}/></div>
-      <div className="webProjects six"><img className="portfolio" src={WebProjects}/></div>
+        <div className="webProjects one"><img className="portfolio" src={WebProjects}/></div>
+        <div className="webProjects two"><img className="portfolio" src={WebProjects}/></div>
+        <div className="webProjects three"><img className="portfolio" src={WebProjects}/></div>
+      
 
       </div>
     )

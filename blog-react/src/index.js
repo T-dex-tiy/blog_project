@@ -126,8 +126,6 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App}/>
-  </Router>,
+  <App/>,
   document.getElementById('root')
 );
