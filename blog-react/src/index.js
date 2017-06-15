@@ -1,6 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { browserHistory, Router, Route, IndexRoute } from 'react-router';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import createHistory from 'history/createBrowserHistory';
 import Rebase from 're-base';
 import firebase from 'firebase';
 import About from './blog/About.js';
@@ -26,6 +31,8 @@ const app = firebase.initializeApp({
 });
 
 const base = Rebase.createClass(app.database());
+
+const history = createHistory();
 
 class App extends Component {
   constructor(props){
@@ -126,6 +133,9 @@ class App extends Component {
 }
 
 ReactDOM.render(
-  <App/>,
+  <Router history={history}>
+    <Route path="/" component={App}>
+    </Route>
+  </Router>,
   document.getElementById('root')
 );
