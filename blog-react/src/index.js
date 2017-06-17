@@ -20,6 +20,7 @@ import {EventEmitter} from 'events';
 import Links from './main-content/linkpages.js';
 import All from './main-content/all.js';
 import Nav from './components/nav.js';
+import Footer from './footerLinks/socialLinks.js'
 import NavBar from './components/navbar.js';
 import './styles/app.css';
 
@@ -125,7 +126,7 @@ class App extends Component {
             {DisplayedScreen}
         </div>
         </div>
-        <div className="app-footer"> <p> The Dinosaur Engineering Expierence 2017</p> </div>
+        <div className="app-footer"> <Footer/><p> The Dinosaur Engineering Expierence 2017</p></div>
       </div>
     )
   }

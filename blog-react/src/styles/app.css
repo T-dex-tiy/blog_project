@@ -91,11 +91,22 @@ body {
 
 .app-footer {
   display: flex;
-  height: 35px;
+  flex-direction: row-reverse;
+  justify-content: flex-start space-between;
+  height: 155px;
   background-color: black;
   width: 100%;
-  justify-content: center;
-  color: white; }
+  color: white;
+  align-content: stretch; }
+  .app-footer .footer {
+    border: 1px solid white;
+    justify-content: flex-start;
+    color: inherit; }
+    .app-footer .footer a:link {
+      text-decoration: none; }
+    .app-footer .footer a:hover {
+      color: lightslategrey;
+      cursor: crosshair; }
 
 .linkpages {
   text-align: end;
