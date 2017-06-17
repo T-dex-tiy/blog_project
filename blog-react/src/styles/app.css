@@ -99,7 +99,6 @@ body {
   color: white;
   align-content: stretch; }
   .app-footer .footer {
-    border: 1px solid white;
     justify-content: flex-start;
     color: inherit; }
     .app-footer .footer a:link {
