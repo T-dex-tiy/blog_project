@@ -86,6 +86,8 @@ body {
   .mainContent .blog-main {
     color: black;
     margin: 5px; }
+    .mainContent .blog-main #headField, .mainContent .blog-main #inputField, .mainContent .blog-main #tag {
+      color: black; }
     .mainContent .blog-main .button {
       color: black; }
 

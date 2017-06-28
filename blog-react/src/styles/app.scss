@@ -119,6 +119,11 @@ body {
   .blog-main{
     color:black;
     margin:5px;
+    #headField,#inputField,#tag{
+      color:black;
+    }
+
+
   .button{
     color:black;
   }
@@ -145,7 +150,7 @@ body {
       cursor: crosshair;
     }
 
-    
+
     justify-content: flex-start;
     color: inherit;
   }
