@@ -19,7 +19,6 @@ class about extends Component{
             <h2>Design thru Adventure</h2>
           </div>
         <div className="links">
-          <h1>Projects!</h1>
           <Projects/>
         </div>
       </div>

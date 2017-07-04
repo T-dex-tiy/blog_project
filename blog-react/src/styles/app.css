@@ -166,14 +166,24 @@ body {
     color: white; }
 
 .links {
+  display: flex;
   margin-top: 1095px;
   text-align: center; }
 
 .profilelinks {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin-top: 1px;
   width: 100%;
   border: 1px solid black; }
+  .profilelinks .projectprofiles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1px;
+    width: 100%;
+    border: 1px solid black; }
   .profilelinks .portfolio {
     justify-content: space-around;
     width: 100%;

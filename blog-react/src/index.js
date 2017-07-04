@@ -140,12 +140,6 @@ ReactDOM.render(
   <Router history={history}>
     <div>
       <Route path ="/" component = {App} />
-        <Switch>
-          <Route exact path='/' component={About} />
-          <Route path='/about' component={About} />
-          <Route path='/links' component={Links} />
-          <Route path='/blogs' component={All} />
-        </Switch>
     </div>
   </Router>,
   document.getElementById('root')
