@@ -210,6 +210,7 @@ body {
   width:100%;
   height:300px;
 
+
   h2{
    text-align: center;
    padding-top: 200px;
@@ -220,15 +221,26 @@ body {
 }
 
 .bio{
+  display: flex;
+  align-self: flex-start;
+  justify-content: center;
   position: absolute;
   background: none center center fixed;
   margin-top:600px;
   margin-bottom:25px;
-  width: auto;
+  width: 100%;
   height: auto;
-  text-align: center;
   color: white;
-
+  border: 1px solid black;
+  .bioflex{
+    display: flex;
+    justify-content:center;
+    h1{
+    display: flex;
+    justify-content: center;
+    border: 1px solid black;
+  }
+  }
 }
 }
 .links{

@@ -13,7 +13,9 @@ class about extends Component{
             <h2>Loud and Original</h2>
           </div>
           <div className="bio">
-            <h1>Adventure based web design and pursuing the next big idea.</h1>
+            <div className="bioflex">
+              <h1>Adventure based web design and pursuing the next big idea.</h1>
+            </div>
           </div>
           <div className="Hero2">
             <h2>Design thru Adventure</h2>
