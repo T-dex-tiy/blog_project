@@ -141,6 +141,7 @@ body {
   align-content: stretch;
 
   .footer{
+    margin-right: 5px;
     a:link
     {
       text-decoration: none;
@@ -231,14 +232,14 @@ body {
   width: 100%;
   height: auto;
   color: white;
-  border: 1px solid black;
+
   .bioflex{
     display: flex;
     justify-content:center;
     h1{
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+
   }
   }
 }
@@ -254,14 +255,14 @@ body {
   justify-content: center;
   margin-top:1px;
   width: 100%;
-  border:1px solid black;
+
   .projectprofiles{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top:1px;
     width: 100%;
-    border:1px solid black;
+
   }
     .portfolio{
       justify-content: space-around;
